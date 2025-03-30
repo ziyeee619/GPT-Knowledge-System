@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/GPT-Knowledge-System/static/css/main.fbb78f71.css",
-    "main.js": "/GPT-Knowledge-System/static/js/main.355f4046.js",
+    "main.js": "/GPT-Knowledge-System/static/js/main.bd35e47b.js",
     "static/js/453.16b882f1.chunk.js": "/GPT-Knowledge-System/static/js/453.16b882f1.chunk.js",
     "index.html": "/GPT-Knowledge-System/index.html",
     "main.fbb78f71.css.map": "/GPT-Knowledge-System/static/css/main.fbb78f71.css.map",
-    "main.355f4046.js.map": "/GPT-Knowledge-System/static/js/main.355f4046.js.map",
+    "main.bd35e47b.js.map": "/GPT-Knowledge-System/static/js/main.bd35e47b.js.map",
     "453.16b882f1.chunk.js.map": "/GPT-Knowledge-System/static/js/453.16b882f1.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.fbb78f71.css",
-    "static/js/main.355f4046.js"
+    "static/js/main.bd35e47b.js"
   ]
 }
