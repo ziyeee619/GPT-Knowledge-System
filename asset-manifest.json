@@ -1,16 +1,15 @@
 {
   "files": {
-    "main.css": "/GPT-Knowledge-System/static/css/main.72e40094.css",
-    "main.js": "/GPT-Knowledge-System/static/js/main.f83427be.js",
+    "main.css": "/GPT-Knowledge-System/static/css/main.fbb78f71.css",
+    "main.js": "/GPT-Knowledge-System/static/js/main.355f4046.js",
     "static/js/453.16b882f1.chunk.js": "/GPT-Knowledge-System/static/js/453.16b882f1.chunk.js",
-    "static/media/logo.svg": "/GPT-Knowledge-System/static/media/logo.6ce24c58023cc2f8fd88fe9d219db6c6.svg",
     "index.html": "/GPT-Knowledge-System/index.html",
-    "main.72e40094.css.map": "/GPT-Knowledge-System/static/css/main.72e40094.css.map",
-    "main.f83427be.js.map": "/GPT-Knowledge-System/static/js/main.f83427be.js.map",
+    "main.fbb78f71.css.map": "/GPT-Knowledge-System/static/css/main.fbb78f71.css.map",
+    "main.355f4046.js.map": "/GPT-Knowledge-System/static/js/main.355f4046.js.map",
     "453.16b882f1.chunk.js.map": "/GPT-Knowledge-System/static/js/453.16b882f1.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.72e40094.css",
-    "static/js/main.f83427be.js"
+    "static/css/main.fbb78f71.css",
+    "static/js/main.355f4046.js"
   ]
 }
