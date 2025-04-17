@@ -8,9 +8,6 @@ function Sidebar() {
           <Link to="/">首頁</Link>
         </li>
         <li>
-          <Link to="/leaderboard">排行榜</Link>
-        </li>
-        <li>
           <Link to="/knowledge">知識庫</Link>
         </li>
         <li>

@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import axios from "axios"; // 確保安裝了 axios: npm install axios
 
 function Project() {
   // 定義狀態
@@ -16,49 +17,71 @@ function Project() {
     }
   }, [question]);
 
-  // 模擬發送問題並接收回答（實際應該與後端連接 GPT API）
+  // 發送問題並獲取回答的函數
   const handleAskQuestion = async () => {
-    setLoading(true);
-    const simulatedAnswer = "This is a simulated GPT answer.";
-    setTimeout(() => {
-      setAnswer(simulatedAnswer);
-      setLoading(false);
-    }, 2000); // 模擬 API 延遲
+    if (!question) return; // 如果問題是空的，則什麼也不做
+
+    setLoading(true); // 顯示加載狀態
+
+    try {
+      // 向後端發送請求（這裡假設後端運行在 http://localhost:5000/ask）
+      const response = await axios.post("http://localhost:5000/ask", {
+        question: question,
+      });
+
+      // 設定從 GPT 獲得的回答
+      setAnswer(response.data.answer);
+    } catch (error) {
+      console.error("獲取回答錯誤:", error);
+      setAnswer("抱歉，處理您的請求時出現錯誤。");
+    }
+
+    setLoading(false); // 隱藏加載狀態
   };
 
   // 點讚功能
+  useEffect(() => {
+    const likedStatus = localStorage.getItem("liked_" + question);
+    setHasLiked(likedStatus === "true");
+  }, [question]);
+
   const handleLike = () => {
     if (!hasLiked) {
-      setLikes(likes + 1);
+      const newLikes = likes + 1;
+      setLikes(newLikes);
       setHasLiked(true);
-      localStorage.setItem("liked_" + question, "true");
+      localStorage.setItem("liked_" + question, "true"); // 记录已点赞
+      localStorage.setItem("likes_" + question, newLikes); // 存储点赞数
     }
   };
 
   return (
     <div className="App">
-      <h1>GPT Knowledge System</h1>
+      <h1>GPT 知識系統</h1>
 
       <div className="question-box">
         <input
           type="text"
-          placeholder="Ask GPT a question..."
+          placeholder="請向 GPT 提問..."
           value={question}
-          onChange={(e) => setQuestion(e.target.value)}
+          onChange={(e) => setQuestion(e.target.value)} // 當用戶輸入問題時更新狀態
         />
         <button onClick={handleAskQuestion} disabled={loading || !question}>
-          {loading ? "Loading..." : "Ask"}
+          {loading ? "加載中..." : "提問"} {/* 顯示加載狀態 */}
         </button>
       </div>
 
       {answer && (
         <div className="answer-box">
-          <h2>Answer:</h2>
+          <h2>✨ AI 回答：</h2>
           <p>{answer}</p>
-          <button onClick={handleLike}>👍 {likes} Likes</button>
+          <button onClick={handleLike} disabled={hasLiked}>
+            👍 {likes} 點讚
+          </button>
         </div>
       )}
     </div>
   );
 }
+
 export default Project;

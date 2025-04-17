@@ -21,7 +21,7 @@ function Leaderboard() {
 
     setQuestions(fetchedQuestions);
     updateFilteredQuestions(fetchedQuestions, searchQuery, sortBy);
-  }, []);
+  }, [searchQuery, sortBy]); // Add dependencies here
 
   // 更新篩選和排序後的問題列表
   const updateFilteredQuestions = (questions, query, sort) => {
@@ -42,14 +42,12 @@ function Leaderboard() {
   const handleSearch = (event) => {
     const query = event.target.value;
     setSearchQuery(query);
-    updateFilteredQuestions(questions, query, sortBy);
   };
 
   // 處理排序切換
   const handleSortChange = (event) => {
     const sortOption = event.target.value;
     setSortBy(sortOption);
-    updateFilteredQuestions(questions, searchQuery, sortOption);
   };
 
   return (
