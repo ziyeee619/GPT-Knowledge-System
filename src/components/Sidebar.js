@@ -1,30 +1,34 @@
-import { Link, useLocation } from "react-router-dom";
-import "../assets/css/Sidebar.css"; // 確保你有引入這份 CSS
+import { NavLink } from "react-router-dom";
+import "../assets/css/Sidebar.css"; // 確保有引入樣式
 
 function Sidebar() {
-  const location = useLocation();
-
-  const getActiveClass = (path) => {
-    return location.pathname === path ? "active" : "";
-  };
-
   return (
     <nav className="sidebar">
       <ul>
-        <li className={getActiveClass("/")}>
-          <Link to="/">首頁</Link>
+        <li>
+          <NavLink exact to="/" activeClassName="active">
+            首頁
+          </NavLink>
         </li>
-        <li className={getActiveClass("/knowledge")}>
-          <Link to="/knowledge">知識庫</Link>
+        <li>
+          <NavLink to="/knowledge" activeClassName="active">
+            知識庫
+          </NavLink>
         </li>
-        <li className={getActiveClass("/documents")}>
-          <Link to="/documents">文檔管理</Link>
+        <li>
+          <NavLink to="/documents" activeClassName="active">
+            文檔管理
+          </NavLink>
         </li>
-        <li className={getActiveClass("/collaboration")}>
-          <Link to="/collaboration">協作</Link>
+        <li>
+          <NavLink to="/collaboration" activeClassName="active">
+            協作
+          </NavLink>
         </li>
-        <li className={getActiveClass("/analytics")}>
-          <Link to="/analytics">數據分析</Link>
+        <li>
+          <NavLink to="/analytics" activeClassName="active">
+            數據分析
+          </NavLink>
         </li>
       </ul>
     </nav>

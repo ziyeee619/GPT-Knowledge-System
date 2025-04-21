@@ -1,4 +1,3 @@
-//拖拉任務元件
 import React, { useState } from "react";
 import { DragDropContext, Droppable, Draggable } from "react-beautiful-dnd";
 import "../assets/css/TaskBoard.css";
@@ -19,16 +18,21 @@ const TaskBoard = () => {
     const { source, destination } = result;
     if (!destination) return;
 
-    const sourceCol = columns[source.droppableId];
-    const destCol = columns[destination.droppableId];
+    const sourceCol = Array.from(columns[source.droppableId]);
+    const destCol = Array.from(columns[destination.droppableId]);
     const [movedTask] = sourceCol.splice(source.index, 1);
-    destCol.splice(destination.index, 0, movedTask);
 
-    setColumns({
-      ...columns,
-      [source.droppableId]: sourceCol,
-      [destination.droppableId]: destCol,
-    });
+    if (source.droppableId === destination.droppableId) {
+      sourceCol.splice(destination.index, 0, movedTask);
+      setColumns({ ...columns, [source.droppableId]: sourceCol });
+    } else {
+      destCol.splice(destination.index, 0, movedTask);
+      setColumns({
+        ...columns,
+        [source.droppableId]: sourceCol,
+        [destination.droppableId]: destCol,
+      });
+    }
   };
 
   return (
@@ -41,8 +45,8 @@ const TaskBoard = () => {
               {(provided) => (
                 <div
                   className="task-column"
-                  {...provided.droppableProps}
                   ref={provided.innerRef}
+                  {...provided.droppableProps}
                 >
                   <h3>
                     {colId === "todo"

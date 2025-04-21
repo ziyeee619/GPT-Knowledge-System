@@ -91,26 +91,31 @@ function KnowledgeBase() {
       <div className="knowledge-controls">
         <input
           type="text"
-          placeholder="Search questions..."
+          placeholder="搜尋問題...."
           value={searchQuery}
           onChange={(e) => setSearchQuery(e.target.value)}
           className="search-box"
         />
 
         <select
+          className="category-dropdown"
           value={categoryFilter}
           onChange={(e) => setCategoryFilter(e.target.value)}
         >
-          <option value="all">所有問題</option>
+          <option value="all">全部問題</option>
           <option value="科技">科技</option>
           <option value="AI">AI</option>
           <option value="網頁開發">網頁開發</option>
           <option value="管理">管理</option>
         </select>
 
-        <select value={sortBy} onChange={(e) => setSortBy(e.target.value)}>
-          <option value="likes">Sort by Likes</option>
-          <option value="newest">Sort by Newest</option>
+        <select
+          className="sort-dropdown"
+          value={sortBy}
+          onChange={(e) => setSortBy(e.target.value)}
+        >
+          <option value="likes">熱門</option>
+          <option value="newest">最新</option>
         </select>
       </div>
 

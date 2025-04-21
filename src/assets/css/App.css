@@ -1,41 +1,36 @@
+/* App 容器 */
 .App {
-  font-family: Arial, sans-serif;
-  text-align: center;
-  padding: 20px;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  min-height: 85vh;
+  background: linear-gradient(to bottom right, #f7f9fb, #f7f9fb);
+  padding-top: 10vh;
+  padding-left: 1rem;
+  padding-right: 1rem;
 }
 
-/* 問題輸入區域 */
+/* 問題輸入區 */
 .question-box {
-  margin-bottom: 20px;
+  margin-bottom: 30px;
+  background: white;
+  padding: 20px 30px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 12px;
 }
 
 .question-box input {
-  padding: 10px;
-  width: 300px;
-  margin-right: 10px;
+  padding: 10px 14px;
+  width: 280px;
   border: 1px solid #ccc;
-  border-radius: 4px;
-}
-
-.answer-box {
-  background: #f8f9fa; /* 浅灰背景 */
-  border-left: 5px solid #007bff; /* 蓝色边框 */
-  padding: 15px;
-  margin-top: 20px;
-  border-radius: 8px; /* 圆角 */
-  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1); /* 轻微阴影 */
-}
-
-.answer-box h2 {
-  margin-top: 0;
-  font-size: 1.2rem;
-  color: #333;
-}
-
-.answer-box p {
+  border-radius: 6px;
   font-size: 1rem;
-  color: #555;
-  line-height: 1.6;
 }
 
 /* 按鈕樣式 */
@@ -43,11 +38,11 @@ button {
   background: #007bff;
   color: white;
   border: none;
-  padding: 8px 16px;
+  padding: 10px 18px;
   font-size: 1rem;
-  border-radius: 5px;
+  border-radius: 6px;
   cursor: pointer;
-  transition: 0.3s;
+  transition: 0.3s ease;
 }
 
 button:hover {
@@ -57,4 +52,68 @@ button:hover {
 button:disabled {
   background-color: #cccccc;
   cursor: not-allowed;
+}
+
+/* 回答區塊 */
+.answer-box {
+  background: #ffffff;
+  border-left: 5px solid #007bff;
+  padding: 20px 25px;
+  border-radius: 12px;
+  max-width: 600px;
+  width: 100%;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  margin-top: 20px;
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+.answer-box h2 {
+  margin-top: 0;
+  font-size: 1.25rem;
+  color: #333;
+}
+
+.answer-box p {
+  font-size: 1rem;
+  color: #555;
+  line-height: 1.6;
+}
+
+/* 淡入動畫 */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* 🔻 Media Queries：小螢幕優化 */
+@media (max-width: 768px) {
+  .question-box {
+    flex-direction: column;
+    align-items: stretch;
+    padding: 15px 20px;
+  }
+
+  .question-box input {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+
+  button {
+    width: 100%;
+  }
+
+  .answer-box {
+    padding: 15px 18px;
+    font-size: 0.95rem;
+  }
+
+  .answer-box h2 {
+    font-size: 1.1rem;
+  }
 }
