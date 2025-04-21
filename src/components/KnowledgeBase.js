@@ -19,7 +19,7 @@ function KnowledgeBase() {
         text: "What is AI?",
         likes: 10,
         created_at: "2024-02-21",
-        category: "Technology",
+        category: "科技",
         answer: "AI is the simulation of human intelligence in machines.",
       },
       {
@@ -35,7 +35,7 @@ function KnowledgeBase() {
         text: "What is React?",
         likes: 5,
         created_at: "2024-02-23",
-        category: "Web Dev",
+        category: "網頁開發",
         answer: "React is a JavaScript library for building user interfaces.",
       },
       {
@@ -43,7 +43,7 @@ function KnowledgeBase() {
         text: "How to manage a project?",
         likes: 12,
         created_at: "2024-03-01",
-        category: "Management",
+        category: "管理",
         answer:
           "Use tools like Gantt charts, agile boards, and regular reviews.",
       },
@@ -101,11 +101,11 @@ function KnowledgeBase() {
           value={categoryFilter}
           onChange={(e) => setCategoryFilter(e.target.value)}
         >
-          <option value="all">All Categories</option>
-          <option value="Technology">Technology</option>
+          <option value="all">所有問題</option>
+          <option value="科技">科技</option>
           <option value="AI">AI</option>
-          <option value="Web Dev">Web Dev</option>
-          <option value="Management">Management</option>
+          <option value="網頁開發">網頁開發</option>
+          <option value="管理">管理</option>
         </select>
 
         <select value={sortBy} onChange={(e) => setSortBy(e.target.value)}>
@@ -119,11 +119,11 @@ function KnowledgeBase() {
         <thead>
           <tr>
             <th>#</th>
-            <th>Question</th>
-            <th>Category</th>
-            <th>Likes</th>
-            <th>Date</th>
-            <th>Actions</th>
+            <th>問題</th>
+            <th>分類</th>
+            <th>讚</th>
+            <th>日期</th>
+            <th>回答</th>
           </tr>
         </thead>
         <tbody>

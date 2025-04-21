@@ -32,7 +32,6 @@ function Collaboration() {
         <h1 className="collaboration-title">🟣 協作中心</h1>
 
         {/* ✅ 拖拉式 Trello 任務面板 */}
-        <h2 className="section-title">📋 任務指派</h2>
         <TaskBoard />
 
         {/* ✅ 聊天室區塊（可接 socket.io 實現即時聊天） */}

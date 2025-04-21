@@ -57,7 +57,7 @@ function Project() {
 
   return (
     <div className="App">
-      <h1>GPT 知識系統</h1>
+      <h1>企業知識管理系統</h1>
 
       <div className="question-box">
         <input
