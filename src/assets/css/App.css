@@ -1,4 +1,10 @@
 /* App 容器 */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
 .App {
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   display: flex;
@@ -27,7 +33,7 @@
 
 .question-box input {
   padding: 10px 14px;
-  width: 280px;
+  width: 250px;
   border: 1px solid #ccc;
   border-radius: 6px;
   font-size: 1rem;

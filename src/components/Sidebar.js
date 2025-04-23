@@ -1,32 +1,32 @@
 import { NavLink } from "react-router-dom";
-import "../assets/css/Sidebar.css"; // 確保有引入樣式
+import "../assets/css/Layout.css";
 
-function Sidebar() {
+function Sidebar({ isOpen, onLinkClick }) {
   return (
-    <nav className="sidebar">
+    <nav className={`sidebar ${isOpen ? "active" : ""}`}>
       <ul>
         <li>
-          <NavLink exact to="/" activeClassName="active">
+          <NavLink to="/" onClick={onLinkClick}>
             首頁
           </NavLink>
         </li>
         <li>
-          <NavLink to="/knowledge" activeClassName="active">
+          <NavLink to="/knowledge" onClick={onLinkClick}>
             知識庫
           </NavLink>
         </li>
         <li>
-          <NavLink to="/documents" activeClassName="active">
+          <NavLink to="/documents" onClick={onLinkClick}>
             文檔管理
           </NavLink>
         </li>
         <li>
-          <NavLink to="/collaboration" activeClassName="active">
+          <NavLink to="/collaboration" onClick={onLinkClick}>
             協作
           </NavLink>
         </li>
         <li>
-          <NavLink to="/analytics" activeClassName="active">
+          <NavLink to="/analytics" onClick={onLinkClick}>
             數據分析
           </NavLink>
         </li>
